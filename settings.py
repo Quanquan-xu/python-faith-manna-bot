@@ -44,7 +44,7 @@ APPROVED_SCRIPTURES = [
 ]
 REMIND_SCRIPTURE = '<i><b>🌈「Matthew 5:33」 You have heard that it was said to the people long ago, ' \
                    '\'Do not break your oath, but keep the oaths you have made to the Lord.\'</b></i>'
-REMIND_SCRIPTURE_ID = "Matthew 5:33"
+REMIND_SCRIPTURE_INFO = "You have not posted your audio file of "
 GROUPS_REPLY_MESSAGE_TITLE = "背经群进度汇报"
 WEEKLY_WORSHIP_TITLE = "本周资讯"
 MESSAGES_QUEUE = {
@@ -54,8 +54,8 @@ MESSAGES_QUEUE = {
             "start_date": "2020-07-06",
             "end_date": "2020-11-22",
             "duration": "20周",
-            "title": "罗马书速成背经群",
-            "link": "https://t.me/joinchat/MPjBhBw2KGt4CQt-9ZlVEQ",
+            "title": "罗马书背诵教室101",
+            "link": "https://t.me/joinchat/MPjBhBlJ9fhsh14KUK0FQA",
             "desc": "每天凌晨发经文；一周发送经文一章；周日休息，周一到周六，每天发送经文节数不限，根据章节长度和完整性而定。每发送4章，停休一周复习。",
             "extra": "如果不想收到经文和提示消息，退群即可！（可以根据此消息的链接信息找到背经群）"
         },
@@ -64,7 +64,7 @@ MESSAGES_QUEUE = {
             "start_date": "2020-07-06",
             "end_date": "2021-02-14",
             "duration": "32周",
-            "title": "罗马书渐进背经群",
+            "title": "罗马书背诵教室102",
             "link": "https://t.me/joinchat/MPjBhBzx-U17i5Wiuh8Cyw",
             "desc": "每天凌晨发经文；从周一到周六，每天发送经文不大于3节，会尽量保持经文上下文完整性；周日休息，中间不会停休复习。",
             "extra": "如果不想收到经文和提示消息，退群即可！（可以根据此消息的链接信息找到背经群）"
@@ -72,23 +72,73 @@ MESSAGES_QUEUE = {
         1383063121: {
             "available": True,
             "start_date": "2020-07-06",
-            "end_date": "2020-12-06",
-            "duration": "22周",
-            "title": "灵活背经群",
-            "link": "https://t.me/joinchat/MPjBhBlJ9fhsh14KUK0FQA",
-            "desc": "根据我们小组下半年背经计划定。已计划会依次背诵马太福音5-7章登山宝训、腓立比书和歌罗西书，具体实施视情况而定",
+            "end_date": "2020-12-27",
+            "duration": "25周",
+            "title": "灵活背经教室101",
+            "link": "https://t.me/joinchat/MPjBhB25eb-m2nt9s5vgmg",
+            "desc": "根据我们小组下半年背经计划定。已计划会依次背诵马太福音5-7章登山宝训（已完成）、加拉太书（正进行）、腓立比书和歌罗西书，具体实施视情况而定",
             "extra": "如果不想收到经文和提示消息，退群即可！（可以根据此消息的链接信息找到背经群）"
         },
-        473311339: {
+        402943549: {
             "available": True,
-            "start_date": "2020-07-06",
-            "end_date": "2020-12-06",
-            "duration": "22周",
-            "title": "灵活背经群-测试",
-            "link": "https://t.me/joinchat/MPjBhBlJ9fhsh14KUK0FQA",
-            "desc": "根据我们小组下半年背经计划定。已计划会依次背诵马太福音5-7章登山宝训、腓立比书和歌罗西书，具体实施视情况而定",
+            "start_date": "2020-09-07",
+            "end_date": "2020-09-26",
+            "duration": "3周",
+            "title": "加拉太书1章背经教室",
+            "link": "https://t.me/joinchat/MPjBhBgEbj1ZCyZnJCohAA",
+            "desc": "每周循环发送加拉太书1章经文；从周一到周五，每天发送经文不大于5节，会尽量保持经文上下文完整性；周六停休复习，周日休息。",
             "extra": "如果不想收到经文和提示消息，退群即可！（可以根据此消息的链接信息找到背经群）"
-        }
+        },
+        405247236: {
+            "available": True,
+            "start_date": "2020-09-07",
+            "end_date": "2020-09-26",
+            "duration": "3周",
+            "title": "加拉太书2章背经教室",
+            "link": "https://t.me/joinchat/MPjBhBgnlQQb3exT1R_APg",
+            "desc": "每周循环发送加拉太书2章经文；从周一到周五，每天发送经文不大于5节，会尽量保持经文上下文完整性；周六停休复习，周日休息。",
+            "extra": "如果不想收到经文和提示消息，退群即可！（可以根据此消息的链接信息找到背经群）"
+        },
+        257532985: {
+            "available": True,
+            "start_date": "2020-09-07",
+            "end_date": "2020-09-26",
+            "duration": "3周",
+            "title": "加拉太书3章背经教室",
+            "link": "https://t.me/joinchat/MPjBhA9ZpDndH9rxdYXpjQ",
+            "desc": "每周循环发送加拉太书3章经文；从周一到周六，每天发送经文不大于5节(个别情况除外)，会尽量保持经文上下文完整性；周日复习。",
+            "extra": "如果不想收到经文和提示消息，退群即可！（可以根据此消息的链接信息找到背经群）"
+        },
+        445852220: {
+            "available": True,
+            "start_date": "2020-09-07",
+            "end_date": "2020-09-26",
+            "duration": "3周",
+            "title": "加拉太书4章背经教室",
+            "link": "https://t.me/joinchat/MPjBhBqTKjwYtIeEWKQ-DQ",
+            "desc": "每周循环发送加拉太书4章经文；从周一到周六，每天发送经文不大于5节(个别情况除外)，会尽量保持经文上下文完整性；周日复习。",
+            "extra": "如果不想收到经文和提示消息，退群即可！（可以根据此消息的链接信息找到背经群）"
+        },
+        408638071: {
+            "available": True,
+            "start_date": "2020-09-07",
+            "end_date": "2020-09-26",
+            "duration": "3周",
+            "title": "加拉太书5章背经教室",
+            "link": "https://t.me/joinchat/MPjBhBhbUncN4ctcvtE24w",
+            "desc": "每周循环发送加拉太书5章经文；从周一到周六，每天发送经文不大于5节(个别情况除外)，会尽量保持经文上下文完整性；周日复习。",
+            "extra": "如果不想收到经文和提示消息，退群即可！（可以根据此消息的链接信息找到背经群）"
+        },
+        422715281: {
+            "available": True,
+            "start_date": "2020-09-07",
+            "end_date": "2020-09-26",
+            "duration": "3周",
+            "title": "加拉太书6章背经教室",
+            "link": "https://t.me/joinchat/MPjBhBkyH5HvM0R57NtpIg",
+            "desc": "每周循环发送加拉太书6章经文；从周一到周六，每天发送经文不大于5节(个别情况除外)，会尽量保持经文上下文完整性；周日复习。",
+            "extra": "如果不想收到经文和提示消息，退群即可！（可以根据此消息的链接信息找到背经群）"
+        },
 
     },
     WEEKLY_WORSHIP_TITLE: {
