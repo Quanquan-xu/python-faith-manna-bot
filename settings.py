@@ -145,7 +145,7 @@ MESSAGES_QUEUE = {
             "end_date": "2020-12-27",
             "duration": "25周",
             "title": "灵活背经教室101",
-            "link": "小组群-Our New Group",
+            "link": "https://t.me/joinchat/MPjBhB25eb-m2nt9s5vgmg",
             "desc": "根据我们小组下半年背经计划定。已计划会依次背诵马太福音5-7章登山宝训（已完成）、加拉太书（正进行）、腓立比书和歌罗西书，具体实施视情况而定",
             "extra": "特殊时期，特殊对待，如有打扰，敬请原谅"
         },

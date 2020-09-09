@@ -176,7 +176,7 @@ class ScriptureReader:
         self.class_name = class_name
         self.current_date = datetime.datetime.now()
         self.current_date_str = self.current_date.strftime("%Y-%m-%d")
-        self.current_date_str = "2020-09-07"
+        #self.current_date_str = "2020-09-07"
         self.is_sunday = datetime.datetime.today().weekday()
         self.scripture_message = {}
         self.is_to_rest = False
