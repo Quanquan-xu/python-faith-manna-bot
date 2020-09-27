@@ -76,7 +76,7 @@ MESSAGES_QUEUE = {
             "duration": "25周",
             "title": "灵活背经教室101",
             "link": "https://t.me/joinchat/MPjBhB25eb-m2nt9s5vgmg",
-            "desc": "根据我们小组下半年背经计划定。已计划会依次背诵马太福音5-7章登山宝训（已完成）、加拉太书（正进行）、腓立比书和歌罗西书，具体实施视情况而定",
+            "desc": "已计划会依次背诵马太福音5-7章登山宝训（已完成）、加拉太书（已完成）、腓立比书（正进行）和歌罗西书，具体实施视情况而定",
             "extra": "如果不想收到经文和提示消息，退群即可！（可以根据此消息的链接信息找到背经群）"
         },
         402943549: {
@@ -146,7 +146,7 @@ MESSAGES_QUEUE = {
             "duration": "25周",
             "title": "灵活背经教室101",
             "link": "https://t.me/joinchat/MPjBhB25eb-m2nt9s5vgmg",
-            "desc": "根据我们小组下半年背经计划定。已计划会依次背诵马太福音5-7章登山宝训（已完成）、加拉太书（正进行）、腓立比书和歌罗西书，具体实施视情况而定",
+            "desc": "根据我们小组下半年背经计划定。已计划会依次背诵马太福音5-7章登山宝训（已完成）、加拉太书（已完成）、腓立比书（正进行）和歌罗西书，具体实施视情况而定",
             "extra": "特殊时期，特殊对待，如有打扰，敬请原谅"
         },
     },
@@ -163,7 +163,7 @@ MESSAGES_QUEUE = {
 }
 
 SCHEDULE_TIMES = {
-    "maxHourOfSendingScriptureMessage": 19,
+    "maxHourOfSendingScriptureMessage": 15,
     "minHourOfSendingRemindMessage": 20,
     "maxMinuteInHourOfSendingRemindMessage": 5,
     "deadLineHour": 23,

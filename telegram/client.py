@@ -293,7 +293,7 @@ class ScriptureReader:
                     self.scripture_code = 2
                     self._get_review_scripture_message(review_scripture, reader, csv_file)
             else:
-                if self.current_date_str != "2020-09-06":
+                if self.current_date_str != "2020-09-27":
                     test_reader = csv.DictReader(csv_file)
                     for row in test_reader:
                         if row["日期"] == self.current_date_str:
