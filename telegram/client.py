@@ -275,7 +275,7 @@ class ScriptureReader:
         date_available = False
         with open('class/{}.csv'.format(self.class_name), newline='') as csv_file:
             reader = csv.DictReader(csv_file)
-            if self.is_sunday < 7:
+            if self.is_sunday < 6:
                 for row in reader:
                     if row["日期"] == self.current_date_str:
                         scripture = row["经文"]
