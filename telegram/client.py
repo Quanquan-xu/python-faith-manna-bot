@@ -187,7 +187,7 @@ class ScriptureReader:
         d = datetime.timedelta(days=7)
         last_sunday = self.current_date - d
         last_sunday_str = last_sunday.strftime("%Y-%m-%d")
-        # print(last_sunday_str)
+        #print(last_sunday_str)
         #last_sunday_str = "2020-07-19"
         review_scripture_content = ''
         day_index = 1
@@ -308,6 +308,7 @@ class ScriptureReader:
                         print("No available date-Sunday")
                         sys.exit()
                 self.scripture_code = 1
+                csv_file.seek(0)
                 self._get_sunday_scripture_message(reader)
         return self.scripture_message
 
