@@ -470,7 +470,7 @@ class MessageManager:
             "minHourOfSendingRemindMessage"]:
             return False
         else:
-            left_hour = 24 - self.current_hour
+            left_hour = 24 - self.current_hour - 3
             if self.current_minute < SCHEDULE_TIMES[
                 "maxMinuteInHourOfSendingRemindMessage"] or self.is_first_remind_message:
                 first_remind_message = '<b>⏰ {} to me</b>'.format(self.first_remind_message_id)
@@ -681,62 +681,63 @@ class ScriptureScheduler:
             else:
                 message_created_date = message.date.astimezone(timezone('America/Los_Angeles'))
                 message_created_date_str = message_created_date.strftime("%Y%m%d")
-                if message_created_date_str == self.message_manager.current_date:
-                    if isinstance(media, MessageMediaDocument) and isinstance(media.document.attributes[0],
-                                                                              DocumentAttributeAudio):
-                        audio_created_date = message.media.document.date.astimezone(timezone('America/Los_Angeles'))
-                        audio_created_date_str = audio_created_date.strftime("%Y%m%d")
-                        duration = media.document.attributes[0].duration
-                        if audio_created_date_str == self.message_manager.current_date and duration:
-                            if message.id not in rejected_audio_ids:
-                                approved_code = int(audio_created_date.strftime("%H%M"))
-                                audio_message_ids[message.id] = approved_code
-                                audio_duration_ids[message.id] = duration
-                            else:
-                                await message.delete()
-                    elif isinstance(message.media, MessageMediaWebPage):
-                        if isinstance(message.media.webpage, WebPage):
-                            if message.media.webpage.url == self.message_manager.scripture_message_id:
-                                if self.message_manager.group_name in message.message:
-                                    available_audio_ids = list(
-                                        audio_message_ids.keys() - approved_audio_message_ids.keys())
-                                    audio_message = None
-                                    if available_audio_ids:
-                                        audio_id = await self.evaluate_audio_durations(available_audio_ids,
-                                                                                       audio_duration_ids, to_user)
-                                        if audio_id:
-                                            audio_message = {
-                                                "audio_id": audio_id,
-                                                "approved_code": audio_message_ids[audio_id],
-                                                "duration": audio_duration_ids[audio_id]
-                                            }
-                                        else:
-                                            audio_message = False
-                                    return message.id, audio_message
+                if media or content:
+                    if media and (message_created_date_str == self.message_manager.current_date):
+                        if isinstance(media, MessageMediaDocument) and isinstance(media.document.attributes[0],
+                                                                                  DocumentAttributeAudio):
+                            audio_created_date = message.media.document.date.astimezone(timezone('America/Los_Angeles'))
+                            audio_created_date_str = audio_created_date.strftime("%Y%m%d")
+                            duration = media.document.attributes[0].duration
+                            if audio_created_date_str == self.message_manager.current_date and duration:
+                                if message.id not in rejected_audio_ids:
+                                    approved_code = int(audio_created_date.strftime("%H%M"))
+                                    audio_message_ids[message.id] = approved_code
+                                    audio_duration_ids[message.id] = duration
                                 else:
-                                    return 1, message.id
-                        elif isinstance(message.media.webpage, WebPageEmpty):
-                            if self.message_manager.welcome_message_id in content:
-                                is_welcome_message_sent = True
+                                    await message.delete()
+                        elif isinstance(message.media, MessageMediaWebPage):
+                            if isinstance(message.media.webpage, WebPage):
+                                if message.media.webpage.url == self.message_manager.scripture_message_id:
+                                    if self.message_manager.group_name in message.message:
+                                        available_audio_ids = list(
+                                            audio_message_ids.keys() - approved_audio_message_ids.keys())
+                                        audio_message = None
+                                        if available_audio_ids:
+                                            audio_id = await self.evaluate_audio_durations(available_audio_ids,
+                                                                                           audio_duration_ids, to_user)
+                                            if audio_id:
+                                                audio_message = {
+                                                    "audio_id": audio_id,
+                                                    "approved_code": audio_message_ids[audio_id],
+                                                    "duration": audio_duration_ids[audio_id]
+                                                }
+                                            else:
+                                                audio_message = False
+                                        return message.id, audio_message
+                                    else:
+                                        return 1, message.id
+                            elif isinstance(message.media.webpage, WebPageEmpty):
+                                if self.message_manager.welcome_message_id in content:
+                                    is_welcome_message_sent = True
+                            else:
+                                pass
                         else:
-                            pass
-                    else:
-                        if content == self.message_manager.approved_message_id or content == self.message_manager.excellent_message_id:
-                            approved_code = int(message_created_date.strftime("%H%M"))
-                            approved_audio_message_ids[message.reply_to_msg_id] = approved_code
-                        elif content == self.message_manager.rejected_message_id:
-                            rejected_audio_ids.append(message.reply_to_msg_id)
-                            await message.delete()
-                        else:
-                            if self.message_manager.first_remind_message_id in content:
-                                self.message_manager.is_first_remind_message = False
-                            if self.message_manager.rejected_message in content:
+                            if content == self.message_manager.approved_message_id or content == self.message_manager.excellent_message_id:
+                                approved_code = int(message_created_date.strftime("%H%M"))
+                                approved_audio_message_ids[message.reply_to_msg_id] = approved_code
+                            elif content == self.message_manager.rejected_message_id:
+                                rejected_audio_ids.append(message.reply_to_msg_id)
                                 await message.delete()
-                            if self.message_manager.sunday_message_id in content:
-                                return 1, message.id
-                else:
-                    is_first_day = False
-                    break
+                            else:
+                                if self.message_manager.first_remind_message_id in content:
+                                    self.message_manager.is_first_remind_message = False
+                                if self.message_manager.rejected_message in content:
+                                    await message.delete()
+                                if self.message_manager.sunday_message_id in content:
+                                    return 1, message.id
+                    else:
+                        is_first_day = False
+                        break
         if index:
             if is_first_day and not is_welcome_message_sent:
                 return -1, None

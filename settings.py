@@ -49,28 +49,28 @@ GROUPS_REPLY_MESSAGE_TITLE = "背经群进度汇报"
 WEEKLY_WORSHIP_TITLE = "本周资讯"
 MESSAGES_QUEUE = {
     GROUPS_REPLY_MESSAGE_TITLE: {
-        424277496: {
+        587752946: {
             "available": True,
-            "start_date": "2020-07-06",
-            "end_date": "2020-11-22",
-            "duration": "20周",
+            "start_date": "2021-07-19",
+            "end_date": "2021-12-12",
+            "duration": "21周",
             "title": "罗马书背诵教室101",
-            "link": "https://t.me/joinchat/MPjBhBlJ9fhsh14KUK0FQA",
+            "link": "https://t.me/joinchat/uqjrXSWuN6Y4NDlh",
             "desc": "每天凌晨发经文；一周发送经文一章；周日休息，周一到周六，每天发送经文节数不限，根据章节长度和完整性而定。每发送4章，停休一周复习。",
             "extra": "如果不想收到经文和提示消息，退群即可！（可以根据此消息的链接信息找到背经群）"
         },
-        485620045: {
+        1590460321: {
             "available": True,
-            "start_date": "2020-07-06",
-            "end_date": "2021-02-14",
+            "start_date": "2021-07-19",
+            "end_date": "2022-02-27",
             "duration": "32周",
             "title": "罗马书背诵教室102",
-            "link": "https://t.me/joinchat/MPjBhBzx-U17i5Wiuh8Cyw",
+            "link": "https://t.me/joinchat/nNpLjDXwsKRiNjdh",
             "desc": "每天凌晨发经文；从周一到周六，每天发送经文不大于3节，会尽量保持经文上下文完整性；周日休息，中间不会停休复习。",
             "extra": "如果不想收到经文和提示消息，退群即可！（可以根据此消息的链接信息找到背经群）"
         },
         1383063121: {
-            "available": True,
+            "available": False,
             "start_date": "2020-07-06",
             "end_date": "2020-12-27",
             "duration": "25周",
@@ -80,7 +80,7 @@ MESSAGES_QUEUE = {
             "extra": "如果不想收到经文和提示消息，退群即可！（可以根据此消息的链接信息找到背经群）"
         },
         402943549: {
-            "available": True,
+            "available": False,
             "start_date": "2020-09-07",
             "end_date": "2020-09-26",
             "duration": "3周",
@@ -90,7 +90,7 @@ MESSAGES_QUEUE = {
             "extra": "如果不想收到经文和提示消息，退群即可！（可以根据此消息的链接信息找到背经群）"
         },
         405247236: {
-            "available": True,
+            "available": False,
             "start_date": "2020-09-07",
             "end_date": "2020-09-26",
             "duration": "3周",
@@ -100,7 +100,7 @@ MESSAGES_QUEUE = {
             "extra": "如果不想收到经文和提示消息，退群即可！（可以根据此消息的链接信息找到背经群）"
         },
         257532985: {
-            "available": True,
+            "available": False,
             "start_date": "2020-09-07",
             "end_date": "2020-09-26",
             "duration": "3周",
@@ -110,7 +110,7 @@ MESSAGES_QUEUE = {
             "extra": "如果不想收到经文和提示消息，退群即可！（可以根据此消息的链接信息找到背经群）"
         },
         445852220: {
-            "available": True,
+            "available": False,
             "start_date": "2020-09-07",
             "end_date": "2020-09-26",
             "duration": "3周",
@@ -120,7 +120,7 @@ MESSAGES_QUEUE = {
             "extra": "如果不想收到经文和提示消息，退群即可！（可以根据此消息的链接信息找到背经群）"
         },
         408638071: {
-            "available": True,
+            "available": False,
             "start_date": "2020-09-07",
             "end_date": "2020-09-26",
             "duration": "3周",
@@ -130,7 +130,7 @@ MESSAGES_QUEUE = {
             "extra": "如果不想收到经文和提示消息，退群即可！（可以根据此消息的链接信息找到背经群）"
         },
         422715281: {
-            "available": True,
+            "available": False,
             "start_date": "2020-09-07",
             "end_date": "2020-09-26",
             "duration": "3周",
@@ -140,7 +140,7 @@ MESSAGES_QUEUE = {
             "extra": "如果不想收到经文和提示消息，退群即可！（可以根据此消息的链接信息找到背经群）"
         },
         260677511: {
-            "available": True,
+            "available": False,
             "start_date": "2020-07-06",
             "end_date": "2020-12-27",
             "duration": "25周",
@@ -163,10 +163,10 @@ MESSAGES_QUEUE = {
 }
 
 SCHEDULE_TIMES = {
-    "maxHourOfSendingScriptureMessage": 15,
-    "minHourOfSendingRemindMessage": 20,
+    "maxHourOfSendingScriptureMessage": 12,
+    "minHourOfSendingRemindMessage": 17,
     "maxMinuteInHourOfSendingRemindMessage": 5,
-    "deadLineHour": 23,
+    "deadLineHour": 20,
     "deadLineMinute": 40,
 }
 AUDIO_MESSAGE_GUIDANCE = '<b>    音频：</b>' + '<i>发送音频，默认是 经文的背诵音频；可以长按输入框最右端图标 现场录制，或者上传录制好的音频。发送后，15分钟内自动回复任务完成状态</i>'
