@@ -682,7 +682,7 @@ class ScriptureScheduler:
                 message_created_date = message.date.astimezone(timezone('America/Los_Angeles'))
                 message_created_date_str = message_created_date.strftime("%Y%m%d")
                 if media or content:
-                    if media and (message_created_date_str == self.message_manager.current_date):
+                    if message_created_date_str == self.message_manager.current_date:
                         if isinstance(media, MessageMediaDocument) and isinstance(media.document.attributes[0],
                                                                                   DocumentAttributeAudio):
                             audio_created_date = message.media.document.date.astimezone(timezone('America/Los_Angeles'))
@@ -690,7 +690,7 @@ class ScriptureScheduler:
                             duration = media.document.attributes[0].duration
                             if audio_created_date_str == self.message_manager.current_date and duration:
                                 if message.id not in rejected_audio_ids:
-                                    approved_code = int(audio_created_date.strftime("%H%M"))
+                                    approved_code = int(audio_created_date.strftime("%H%M")) + 300
                                     audio_message_ids[message.id] = approved_code
                                     audio_duration_ids[message.id] = duration
                                 else:
@@ -723,7 +723,7 @@ class ScriptureScheduler:
                                 pass
                         else:
                             if content == self.message_manager.approved_message_id or content == self.message_manager.excellent_message_id:
-                                approved_code = int(message_created_date.strftime("%H%M"))
+                                approved_code = int(message_created_date.strftime("%H%M")) + 300
                                 approved_audio_message_ids[message.reply_to_msg_id] = approved_code
                             elif content == self.message_manager.rejected_message_id:
                                 rejected_audio_ids.append(message.reply_to_msg_id)
